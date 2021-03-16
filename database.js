@@ -1,13 +1,19 @@
 // in-memory database
 const database = {
-  channels: {
-    "channel 1": { id: 1 },
-    "channel 2": { id: 2 },
-    "channel 3": { id: 3 },
-    "channel 4": { id: 4 },
-    "channel 5": { id: 5 },
+  channels: [
+    { id: "c1", name: "channel 1" },
+    { id: "c2", name: "channel 2" },
+    { id: "c3", name: "channel 3" },
+    { id: "c4", name: "channel 4" },
+    { id: "c5", name: "channel 5" },
+  ],
+  messages: {
+    c1: [],
+    c2: [],
+    c3: [],
+    c4: [],
+    c5: [],
   },
-  messages: {},
 };
 
 module.exports = database;

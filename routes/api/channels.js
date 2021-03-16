@@ -8,7 +8,7 @@ const database = require("../../database");
 
 router.get("/", async (req, res) => {
   try {
-    const channels = Object.keys(database.channels);
+    const channels = database.channels;
 
     res.json(channels);
   } catch (err) {

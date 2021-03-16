@@ -1,4 +1,7 @@
 import React, { lazy, Suspense, Fragment } from "react";
+import { Provider } from "react-redux";
+
+import store from "./store";
 import "./App.css";
 import Loader from "./utils/Loader";
 
@@ -6,11 +9,13 @@ const MainPageContainer = lazy(() => import("./containers/MainPageContainer"));
 
 const App = () => {
   return (
-    <Fragment>
-      <Suspense fallback={<Loader />}>
-        <MainPageContainer />
-      </Suspense>
-    </Fragment>
+    <Provider store={store}>
+      <Fragment>
+        <Suspense fallback={<Loader />}>
+          <MainPageContainer />
+        </Suspense>
+      </Fragment>
+    </Provider>
   );
 };
 

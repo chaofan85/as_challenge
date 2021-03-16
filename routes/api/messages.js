@@ -6,7 +6,7 @@ const database = require("../../database");
 // @desc    Get all channels
 // @access  Public
 
-router.get("/messages/:channelId", async (req, res) => {
+router.get("/:channelId", async (req, res) => {
   const channelId = req.params.channelId;
 
   const messages = database.messages[channelId];
@@ -14,6 +14,19 @@ router.get("/messages/:channelId", async (req, res) => {
     return res.status(404).send("Can't find messages from this channel");
   }
   res.json(messages);
+});
+
+router.post("/", async (req, res) => {
+  const { channelId, messageBody } = req.body;
+
+  const messageObj = {
+    messageBody,
+    createdAt: Date.now(),
+  };
+
+  database[channelId].push(messageObj);
+
+  res.json(database.messages);
 });
 
 module.exports = router;

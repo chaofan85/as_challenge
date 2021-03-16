@@ -15,7 +15,7 @@ function channelReducer(state = initialState, action) {
       return newState;
 
     default:
-      break;
+      return state;
   }
 }
 

@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { connect } from "react-redux";
 import MainPage from "../components/MainPage";
 
-const MainPageContainer = () => {
-  const [channels, setChannels] = useState([]);
-  const [messages, setMessages] = useState([]);
+import { fetchMessages } from "../actions/message";
+
+const MainPageContainer = (props) => {
+  const { fetchMessages } = props;
+
   const [selectedChannel, setSelectedChannel] = useState("");
 
-  const fetchChannels = async () => {
-    const res = await axios.get("api/channels");
-    console.log(res.data);
-    setChannels(res.data);
-  };
+  useEffect(() => {}, [selectedChannel]);
 
-  useEffect(() => {
-    fetchChannels();
-  }, []);
-
-  return <MainPage channels={channels} messages={messages} />;
+  return <MainPage setSelectedChannel={setSelectedChannel} />;
 };
 
-export default MainPageContainer;
+const mapStateToProps = (state) => ({
+  channel: state.channel,
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchMessages: (data) => dispatch(fetchMessages(data)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainPageContainer);

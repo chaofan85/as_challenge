@@ -1,8 +1,8 @@
 import axios from "axios";
 
-import GET_MESSAGES from "./types";
+import { GET_MESSAGES } from "./types";
 
-export const fetchMessage = (channelId) => async (dispatch) => {
+export const fetchMessages = (channelId) => async (dispatch) => {
   const res = await axios.get(`api/messages/${channelId}`);
 
   dispatch({

@@ -15,7 +15,7 @@ function messageReducer(state = initialState, action) {
       return newState;
 
     default:
-      break;
+      return state;
   }
 }
 
