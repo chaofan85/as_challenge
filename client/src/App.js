@@ -5,6 +5,8 @@ import store from "./store";
 import "./App.css";
 import Loader from "./utils/Loader";
 
+import "./bootstrap.min.css";
+
 const MainPageContainer = lazy(() => import("./containers/MainPageContainer"));
 
 const App = () => {

@@ -4,6 +4,8 @@ import ChannelList from "../components/ChannelList";
 import ChannelContext from "../context/ChannelContext";
 import { fetchChannels } from "../actions/channel";
 
+import Chip from "@material-ui/core/Chip";
+
 const ChannelListContainer = (props) => {
   const { fetchChannels } = props;
   const { selectedChannel, setSelectedChannel } = useContext(ChannelContext);
@@ -15,17 +17,29 @@ const ChannelListContainer = (props) => {
   }, [fetchChannels]);
 
   const channelsList = channels.map((channel) => (
-    <div
+    <Chip
       key={channel.id}
+      label={channel.name}
       onClick={() => {
         setSelectedChannel(channel.id);
       }}
-    >
-      {channel.name}
-    </div>
+      clickable
+      color="primary"
+      style={styles.chip}
+    />
   ));
 
   return <ChannelList channelsList={channelsList} />;
+};
+
+const styles = {
+  chip: {
+    display: "block",
+    width: "150px",
+    margin: "auto",
+    marginBottom: "15px",
+    paddingTop: "5px",
+  },
 };
 
 const mapStateToProps = (state) => ({
