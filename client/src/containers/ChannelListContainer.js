@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { connect } from "react-redux";
 import ChannelList from "../components/ChannelList";
-
+import ChannelContext from "../context/ChannelContext";
 import { fetchChannels } from "../actions/channel";
 
 const ChannelListContainer = (props) => {
   const { fetchChannels } = props;
+  const { selectedChannel, setSelectedChannel } = useContext(ChannelContext);
 
   const channels = props.channel.channels;
 
@@ -17,7 +18,7 @@ const ChannelListContainer = (props) => {
     <div
       key={channel.id}
       onClick={() => {
-        console.log(channel);
+        setSelectedChannel(channel.id);
       }}
     >
       {channel.name}

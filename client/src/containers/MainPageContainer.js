@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import MainPage from "../components/MainPage";
-
+import ChannelContext from "../context/ChannelContext";
 import { fetchMessages } from "../actions/message";
 
 const MainPageContainer = (props) => {
@@ -9,9 +9,17 @@ const MainPageContainer = (props) => {
 
   const [selectedChannel, setSelectedChannel] = useState("");
 
-  useEffect(() => {}, [selectedChannel]);
+  useEffect(() => {
+    if (selectedChannel) {
+      fetchMessages(selectedChannel);
+    }
+  }, [selectedChannel, fetchMessages]);
 
-  return <MainPage setSelectedChannel={setSelectedChannel} />;
+  return (
+    <ChannelContext.Provider value={{ selectedChannel, setSelectedChannel }}>
+      <MainPage />
+    </ChannelContext.Provider>
+  );
 };
 
 const mapStateToProps = (state) => ({

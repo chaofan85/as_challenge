@@ -8,11 +8,11 @@ const database = {
     { id: "c5", name: "channel 5" },
   ],
   messages: {
-    c1: [],
-    c2: [],
-    c3: [],
-    c4: [],
-    c5: [],
+    c1: ["Hello"],
+    c2: ["How are you"],
+    c3: ["Good to see you"],
+    c4: ["Have a good day"],
+    c5: ["Bye"],
   },
 };
 
