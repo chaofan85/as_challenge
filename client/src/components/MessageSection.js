@@ -1,10 +1,12 @@
 import React from "react";
+import MessageListContainer from "../containers/MessageListContainer";
+import InputBoxContainer from "../containers/InputBoxContainer";
 
-const MessageSection = (props) => {
-  const { messageList } = props;
+const MessageSection = () => {
   return (
     <div>
-      <ul>{messageList}</ul>
+      <MessageListContainer />
+      <InputBoxContainer />
     </div>
   );
 };

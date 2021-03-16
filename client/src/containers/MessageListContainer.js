@@ -1,13 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import MessageSection from "../components/MessageSection";
+import MessageList from "../components/MessageList";
 
 const MessageSectionContainer = (props) => {
   const messages = props.message.messages;
-
+  console.log(messages);
   const messageList = messages.map((msg, idx) => <li key={idx}>{msg}</li>);
 
-  return <MessageSection messageList={messageList} />;
+  return <MessageList messageList={messageList} />;
 };
 
 const mapStateToProps = (state) => ({

@@ -1,6 +1,6 @@
 import React from "react";
 import ChannelListContainer from "../containers/ChannelListContainer";
-import MessageSectionContainer from "../containers/MessageSectionContainer";
+import MessageSection from "../components/MessageSection";
 
 const MainPage = (props) => {
   return (
@@ -9,7 +9,7 @@ const MainPage = (props) => {
         <ChannelListContainer channels={props.channels} />
       </div>
       <div className="col-sm-8">
-        <MessageSectionContainer />
+        <MessageSection />
       </div>
     </div>
   );

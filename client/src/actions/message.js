@@ -12,9 +12,7 @@ export const fetchMessages = (channelId) => async (dispatch) => {
 };
 
 export const createMessage = (formData) => async (dispatch) => {
-  const { channelId, messageBody } = formData;
-
-  const res = await axios.post(`api/messages/${channelId}`, messageBody);
+  const res = await axios.post(`api/messages`, formData);
 
   dispatch({
     type: GET_MESSAGES,
