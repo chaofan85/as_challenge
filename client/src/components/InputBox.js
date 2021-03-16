@@ -33,16 +33,16 @@ const InputBox = (props) => {
 const styles = {
   inputBox: {
     textAlign: "left",
-    height: `${window.innerHeight * 0.1}px`,
+    height: `${(window.innerHeight - 140) * 0.07}px`,
   },
   input: {
     width: "80%",
-    height: "30px",
+    height: "100%",
     borderRadius: "10px 0 0 10px",
   },
   button: {
     width: "80px",
-    height: "30px",
+    height: `${(window.innerHeight - 140) * 0.07}px`,
     boxSizing: "border-box",
     borderRadius: "0 10px 10px 0",
   },

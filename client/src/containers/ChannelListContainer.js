@@ -38,7 +38,7 @@ const styles = {
     width: "150px",
     margin: "auto",
     marginBottom: "15px",
-    paddingTop: "5px",
+    paddingTop: "7px",
   },
 };
 

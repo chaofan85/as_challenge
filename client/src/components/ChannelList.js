@@ -4,8 +4,8 @@ const ChannelList = (props) => {
   const { channelsList } = props;
   return (
     <div>
-      <div style={styles.heading}>
-        <h3>Channels</h3>
+      <div style={styles.headingContainer}>
+        <h3 style={styles.heading}>Channels</h3>
       </div>
 
       <div style={styles.channels}>{channelsList}</div>
@@ -14,14 +14,19 @@ const ChannelList = (props) => {
 };
 
 const styles = {
-  heading: {
+  headingContainer: {
     height: "60px",
     paddingTop: "15px",
-    borderBottom: "1px solid black",
+    backgroundColor: "#12232E",
+  },
+  heading: {
+    fontWeight: "600",
+    color: "white",
   },
   channels: {
-    height: `${window.innerHeight - 60}px`,
+    height: `${window.innerHeight - 100}px`,
     paddingTop: "25px",
+    backgroundColor: "#4DA8DA",
   },
 };
 

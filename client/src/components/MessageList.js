@@ -11,7 +11,7 @@ const MessageList = (props) => {
 
 const styles = {
   messageList: {
-    height: `${window.innerHeight * 0.9}px`,
+    height: `${(window.innerHeight - 115) * 0.93}px`,
   },
 };
 

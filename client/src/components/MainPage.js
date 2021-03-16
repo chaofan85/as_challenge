@@ -20,7 +20,6 @@ const styles = {
     paddingLeft: "0",
     paddingRight: "0",
     textAlign: "center",
-    border: "1px solid black",
   },
   div2: {
     paddingLeft: "0",
