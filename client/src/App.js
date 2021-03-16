@@ -2,13 +2,13 @@ import React, { lazy, Suspense, Fragment } from "react";
 import "./App.css";
 import Loader from "./utils/Loader";
 
-const MainPageContainer = lazy(() => import("./containers/MainPageContainer"));
+const MainPage = lazy(() => import("./components/MainPage"));
 
 const App = () => {
   return (
     <Fragment>
       <Suspense fallback={<Loader />}>
-        <MainPageContainer />
+        <MainPage />
       </Suspense>
     </Fragment>
   );
