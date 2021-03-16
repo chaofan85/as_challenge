@@ -3,6 +3,7 @@ import ChannelListContainer from "../containers/ChannelListContainer";
 import MessageSectionContainer from "../containers/MessageSectionContainer";
 
 const MainPage = (props) => {
+  console.log(props);
   return (
     <div className="row">
       <div className="col-sm-4">
