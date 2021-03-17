@@ -1,6 +1,6 @@
 ## How to run
 
-1. Use `git clone` to download the files.
+1. Use `git clone` command to download the files.
 2. Run `cd as_challenge` to go to the folder
 3. Run `npm install` to download dependencies.
 4. Run `cd client` command to go to the `client` folder, then run `npm install` to install dependencies.
