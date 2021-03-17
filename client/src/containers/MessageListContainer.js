@@ -21,8 +21,7 @@ const MessageSectionContainer = (props) => {
 
   const getTime = (date) => {
     const sentTime = new Date(date);
-    console.log(sentTime);
-    console.log(typeof sentTime);
+
     let hour = sentTime.getHours();
     const ampm = hour >= 12 ? "pm" : "am";
     const minute = sentTime.getMinutes();
@@ -44,7 +43,6 @@ const MessageSectionContainer = (props) => {
             primary={msg.messageBody}
             secondary={getTime(msg.createdAt)}
           />
-          {/* <ListItemText primary="lalala" /> */}
         </ListItem>
       ))
     ) : (
