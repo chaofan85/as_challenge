@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { connect } from "react-redux";
 import ChannelList from "../components/ChannelList";
 import ChannelContext from "../context/ChannelContext";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import InputBox from "../components/InputBox";
 import { connect } from "react-redux";
 import { createMessage } from "../actions/message";
