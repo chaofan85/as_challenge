@@ -42,8 +42,10 @@ const styles = {
     borderRadius: "10px 0 0 10px",
   },
   button: {
-    width: "80px",
+    width: "120px",
     height: `40px`,
+    fontSize: "18px",
+    fontWeight: "600",
     boxSizing: "border-box",
     borderRadius: "0 10px 10px 0",
   },
