@@ -9,6 +9,12 @@ const InputBoxContainer = (props) => {
   const { selectedChannel } = useContext(ChannelContext);
   const [messageBody, setMessageBody] = useState("");
 
+  const enterToSubmit = (e) => {
+    if (selectedChannel && e.which === 13) {
+      onSubmit();
+    }
+  };
+
   const onSubmit = () => {
     const data = { channelId: selectedChannel, messageBody };
     createMessage(data);
@@ -19,6 +25,7 @@ const InputBoxContainer = (props) => {
     <InputBox
       messageBody={messageBody}
       setMessageBody={setMessageBody}
+      enterToSubmit={enterToSubmit}
       onSubmit={onSubmit}
     />
   );

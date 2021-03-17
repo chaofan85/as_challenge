@@ -1,17 +1,19 @@
 import React from "react";
+import List from "@material-ui/core/List";
 
 const MessageList = (props) => {
   const { messageList } = props;
   return (
-    <div style={styles.messageList}>
-      <ul>{messageList}</ul>
+    <div id="messageList" style={styles.messageList}>
+      <List style={{ position: "relative" }}>{messageList}</List>
     </div>
   );
 };
 
 const styles = {
   messageList: {
-    height: `${(window.innerHeight - 115) * 0.93}px`,
+    height: `560px`,
+    overflowY: "scroll",
   },
 };
 

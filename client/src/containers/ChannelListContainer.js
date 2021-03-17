@@ -24,7 +24,7 @@ const ChannelListContainer = (props) => {
         setSelectedChannel(channel.id);
       }}
       clickable
-      color="primary"
+      color={`${selectedChannel === channel.id ? "secondary" : "primary"}`}
       style={styles.chip}
     />
   ));

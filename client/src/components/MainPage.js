@@ -23,7 +23,7 @@ const styles = {
   },
   div2: {
     paddingLeft: "0",
-    paddingRight: "25px",
+    paddingRight: "15px",
   },
 };
 

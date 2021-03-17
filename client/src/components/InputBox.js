@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react";
 import ChannelContext from "../context/ChannelContext";
 
 const InputBox = (props) => {
-  const { messageBody, setMessageBody, onSubmit } = props;
+  const { messageBody, setMessageBody, enterToSubmit, onSubmit } = props;
   const { selectedChannel } = useContext(ChannelContext);
 
   useEffect(() => {
@@ -14,6 +14,7 @@ const InputBox = (props) => {
       <input
         value={messageBody}
         className="form-control"
+        onKeyPress={enterToSubmit}
         onChange={(e) => setMessageBody(e.currentTarget.value)}
         style={styles.input}
       />
@@ -33,7 +34,7 @@ const InputBox = (props) => {
 const styles = {
   inputBox: {
     textAlign: "left",
-    height: `${(window.innerHeight - 140) * 0.07}px`,
+    height: `40px`,
   },
   input: {
     width: "80%",
@@ -42,7 +43,7 @@ const styles = {
   },
   button: {
     width: "80px",
-    height: `${(window.innerHeight - 140) * 0.07}px`,
+    height: `40px`,
     boxSizing: "border-box",
     borderRadius: "0 10px 10px 0",
   },

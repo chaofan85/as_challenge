@@ -24,8 +24,8 @@ const styles = {
     color: "white",
   },
   channels: {
-    height: `${window.innerHeight - 100}px`,
-    paddingTop: "25px",
+    height: "600px",
+    paddingTop: "50px",
     backgroundColor: "#4DA8DA",
   },
 };

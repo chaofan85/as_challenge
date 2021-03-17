@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none !important;
+  outline-color: transparent;
+  outline-style: none;
+}
